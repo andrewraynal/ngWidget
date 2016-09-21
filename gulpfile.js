@@ -215,13 +215,8 @@ gulp.task('copy:fonts', function () {
     .pipe(gulp.dest(myApp.dist + '/fonts'));
 });
 
-gulp.task('copy:favicon', function () {
-  return gulp.src(myApp.app + '/favicon.ico')
-    .pipe(gulp.dest(myApp.dist));
-});
-
 gulp.task('build', ['clean:dist', 'bower'], function () {
-  runSequence(['images', 'copy:extras', 'copy:fonts', 'copy:favicon', 'client:build']);
+  runSequence(['images', 'copy:extras', 'copy:fonts', 'client:build']);
 });
 
 gulp.task('default', ['build']);
